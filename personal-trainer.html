@@ -1,0 +1,746 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description"  content="A RAG-based workout generation application that's hyper personalized to each user" />
+      <meta name="twitter:card"  content="summary_large_image" />
+      <meta name="twitter:site"  content="@AdobePortfolio" />
+      <meta  property="og:title" content="Sundar Thondikulam Subramanian - AI Personal trainer" />
+      <meta  property="og:description" content="A RAG-based workout generation application that's hyper personalized to each user" />
+      <meta  property="og:image" content="/assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x2565_6f457bf5.png" />
+      <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURUxpcU3H2DoAAAABdFJOUwBA5thmAAAADElEQVQI12NgIA0AAAAwAAHHqoWOAAAAAElFTkSuQmCC"  />
+      <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="/assets/4e893ae0b8f9ecbcc2e1d3dce3f77dcd1763504806_6057558e.css" type="text/css" />
+    <link rel="canonical" href="https://sundarsubramanian.xyz/personal-trainer" />
+      <title>Sundar Thondikulam Subramanian - AI Personal trainer</title>
+    <script type="text/javascript" src="/assets/4KRArRJA5UC4FlwP8et5zXlG0PQMC18Lm09juluHn23fezJffHYEBsJzwD9o_e6400835.js" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+                <div class="gallery-title"><a href="/work" >Product work</a></div>
+                <div class="gallery-title"><a href="/ai-projects" >AI projects</a></div>
+      <div class="link-title">
+        <a href="https://sundarsubramanian.substack.com/" target="_blank">Substack</a>
+      </div>
+      <div class="page-title">
+        <a href="/contact" >Contact</a>
+      </div>
+          </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+                  <li>
+                    <a href="https://twitter.com/sundar1791" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="-8 -3 35 24" xml:space="preserve" class="icon"><path d="M10.4 7.4 16.9 0h-1.5L9.7 6.4 5.2 0H0l6.8 9.7L0 17.4h1.5l5.9-6.8 4.7 6.8h5.2l-6.9-10ZM8.3 9.8l-.7-1-5.5-7.6h2.4l4.4 6.2.7 1 5.7 8h-2.4L8.3 9.8Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/sundar1791" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                        c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                        C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/@sundarsubramanian" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path class="st0" d="M23.5,7.4C23.5,7.4,23.5,7.4,23.5,7.4L23.5,7.4l-5.2-2.6c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0
+                          c-0.2,0-0.4,0.1-0.5,0.3l-3,4.8l3.7,6.1L23.5,7.4C23.5,7.5,23.5,7.4,23.5,7.4z"/>
+                        <polygon class="st0" points="13,8.8 13,14.3 17.9,16.7   "/>
+                        <path class="st0" d="M18.6,17.1l4,2c0.5,0.3,0.9,0.1,0.9-0.4V9L18.6,17.1z"/>
+                        <path class="st0" d="M12.1,7.4l-5-2.5C7,4.9,6.9,4.8,6.8,4.8C6.6,4.8,6.4,5,6.4,5.3v10.9c0,0.3,0.2,0.6,0.5,0.8l4.4,2.2
+                          c0.1,0.1,0.2,0.1,0.3,0.1c0.3,0,0.5-0.2,0.5-0.6L12.1,7.4C12.1,7.5,12.1,7.4,12.1,7.4z"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+    <header class="site-header js-site-header  js-fixed-nav" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+        <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+                <div class="gallery-title"><a href="/work" >Product work</a></div>
+                <div class="gallery-title"><a href="/ai-projects" >AI projects</a></div>
+      <div class="link-title">
+        <a href="https://sundarsubramanian.substack.com/" target="_blank">Substack</a>
+      </div>
+      <div class="page-title">
+        <a href="/contact" >Contact</a>
+      </div>
+        </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+                  <li>
+                    <a href="https://twitter.com/sundar1791" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="-8 -3 35 24" xml:space="preserve" class="icon"><path d="M10.4 7.4 16.9 0h-1.5L9.7 6.4 5.2 0H0l6.8 9.7L0 17.4h1.5l5.9-6.8 4.7 6.8h5.2l-6.9-10ZM8.3 9.8l-.7-1-5.5-7.6h2.4l4.4 6.2.7 1 5.7 8h-2.4L8.3 9.8Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/sundar1791" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                        c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                        C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/@sundarsubramanian" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path class="st0" d="M23.5,7.4C23.5,7.4,23.5,7.4,23.5,7.4L23.5,7.4l-5.2-2.6c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0
+                          c-0.2,0-0.4,0.1-0.5,0.3l-3,4.8l3.7,6.1L23.5,7.4C23.5,7.5,23.5,7.4,23.5,7.4z"/>
+                        <polygon class="st0" points="13,8.8 13,14.3 17.9,16.7   "/>
+                        <path class="st0" d="M18.6,17.1l4,2c0.5,0.3,0.9,0.1,0.9-0.4V9L18.6,17.1z"/>
+                        <path class="st0" d="M12.1,7.4l-5-2.5C7,4.9,6.9,4.8,6.8,4.8C6.6,4.8,6.4,5,6.4,5.3v10.9c0,0.3,0.2,0.6,0.5,0.8l4.4,2.2
+                          c0.1,0.1,0.2,0.1,0.3,0.1c0.3,0,0.5-0.2,0.5-0.6L12.1,7.4C12.1,7.5,12.1,7.4,12.1,7.4z"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+          </ul>
+        </div>
+        <div class="hamburger-click-area js-hamburger">
+          <div class="hamburger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+    </header>
+    <div class="header-placeholder"></div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <main>
+  <div class="page-container" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+        <header class="page-header content" data-context="pages" data-identity="id:p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936" data-hover-hint="pageHeader" data-hover-hint-id="p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936">
+            <h1 class="title preserve-whitespace e2e-site-logo-text">AI Personal trainer</h1>
+            <p class="description">A RAG-based workout generation application that's hyper personalized to each user</p>
+        </header>
+      <div class="page-content js-page-content" data-context="pages" data-identity="id:p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Link to web app - <a href="https://fitness-tracker-sundars6.replit.app/" target="_self">https://fitness-tracker-sundars6.replit.app/</a></div><div class="sub-title"><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/383e13ec-5f5d-4497-9ae1-609e241cff78_114889e6.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/383e13ec-5f5d-4497-9ae1-609e241cff78_rw_1920_51bd6944.png"
+             data-srcset="/assets/383e13ec-5f5d-4497-9ae1-609e241cff78_rw_600_ffb7c554.png 600w,/assets/383e13ec-5f5d-4497-9ae1-609e241cff78_rw_1200_776170ae.png 1200w,/assets/383e13ec-5f5d-4497-9ae1-609e241cff78_rw_1920_51bd6944.png 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 61.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 21px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">Problem statement<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>There are tons of workout companion apps out there, such as My Fitness Pal, Nike Running Club and Strava. But the one missing element among all of them is that they don't evolve and personalize their recommendations according to data they are collecting from the user and particularly their fitness goals. For example - if someone has been regularly doing well on their upper body workouts but might be missing out a bit on cardio, apps do not highlight this trend that might help the user stay on track to meet their goals. A personal trainer who works with the user on a regular basis might be able to spot these trends, but they are too expensive to afford for most people who workout to stay healthy.<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">Why use AI?<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>I felt that this could be a great use case for generative AI, as it does a great job at natural language processing. Workout data is quite predictably consistent. There are various workouts targeting different parts of the body, and there are weights associated with them, which are repeated for a certain number of sets and reps. This system is standardized for gyms across the entire world. By creating a RAG (Retrieval-augmented generation) system to continually parse through the workout logs and generate tailored recommendations based on the fitness goals of the user, it might be possible to give the user a more personalized experience that closely mimics a personal trainer.<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">Building the solution<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>I used Claude to generate a high-level PRD to input into Replit, that clearly states what I'm trying to build and the core features and design elements. This is what it generated.<br><br><div><div><div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;"></span><span style="font-family:vcsm;font-style:italic;font-weight:700;">"Fit First: </span><span style="font-family:vcsm;font-style:italic;font-weight:500;"></span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;">A web-based personal fitness tracking and recommendation application that monitors workouts over a 7-day period and generates customized workout plans.<br></span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;"></span><span style="font-family:vcsm;font-style:italic;font-weight:700;">Core Features:</span><span style="font-family:vcsm;font-style:italic;font-weight:500;"><br></span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;">1. Workout Journaling: Daily workout logging with a structured input format for cardio and strength exercises.</span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;">2. Calendar View: Interactive calendar display for viewing and editing past workouts.</span></div><div>3. <span style="font-family:vcsm;font-style:italic;font-weight:500;">Workout Goals: Input and storage of personal metrics (height, weight, BMI, body fat percentage) and fitness objectives.</span></div><div>4. <span style="font-family:vcsm;font-style:italic;font-weight:500;">AI-Powered Workout Suggestions: Personalized workout recommendations based on recent activity, available time, workout preferences, fitness goals, and biological metrics.</span><br></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;"></span><span style="font-family:vcsm;font-style:italic;font-weight:700;">UI/Style:</span><span style="font-family:vcsm;font-style:italic;font-weight:500;"><br></span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;">1. Energetic and motivational design with a fitness-oriented color scheme<br></span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;">2. Clean, intuitive interface with easy-to-read workout summaries and calendar entries<br></span></div><div><span style="font-family:vcsm;font-style:italic;font-weight:500;">3. Responsive layout adapting seamlessly from mobile to desktop views"</span></div><div><br></div><div>Since this was a good initial prompt to give it to the Replit Agent, it was good enough for an initial prototype. But there were many errors, both in the UI design as well as the content that was getting generated. But as I made further refinements with prompts, I started session a more polished, production-like version. Interacting with the agent was a learning curve in itself, as I noticed that the more specific my feedback was and the more information I gave it, the better the results started getting. <br></div></div></div></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/f3d6b9ae-4a86-48b8-980c-5449b265268c_934fd535.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/f3d6b9ae-4a86-48b8-980c-5449b265268c_rw_1200_954a4a6c.png"
+             data-srcset="/assets/f3d6b9ae-4a86-48b8-980c-5449b265268c_rw_600_040fa623.png 600w,/assets/f3d6b9ae-4a86-48b8-980c-5449b265268c_rw_1200_954a4a6c.png 984w,"
+             data-sizes="(max-width: 984px) 100vw, 984px"
+             width="984"
+             height="0"
+             style="padding-bottom: 135.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">Final Outcome<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>After about 2-3 hours of playing around with the application, I was finally ready to deploy it into production with Replit, and here is the final result - <a href="https://fitness-tracker-sundars6.replit.app/" target="_self">https://fitness-tracker-sundars6.replit.app/</a><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">Key features<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Workout logger <br></div><div class="sub-title"><br></div><div class="main-text">Allows you to log workouts for the day from a pre-selected list of strength and cardio workouts, and add sets, reps and weight for each workout. The list of workouts was pre-populated from an AI-generated list, but could be tweaked in the future to add more types of workouts. You can also edit this log once you have saved it. <br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/4e553615-7572-4787-adf9-245279d686cd_cff8397f.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/4e553615-7572-4787-adf9-245279d686cd_rw_1200_272a84fb.png"
+             data-srcset="/assets/4e553615-7572-4787-adf9-245279d686cd_rw_600_38c798ed.png 600w,/assets/4e553615-7572-4787-adf9-245279d686cd_rw_1200_272a84fb.png 1176w,"
+             data-sizes="(max-width: 1176px) 100vw, 1176px"
+             width="1176"
+             height="0"
+             style="padding-bottom: 129.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Workout Calendar<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>Allows users to see all the logged workouts from history in a calendar format, which gives a good visual representation of how active they have been fitness wise. You can also click on each date to see an overview of the workouts done that day along with key details and the total calories burned. This feature also allows users to edit workouts in the past, which can be quite useful if they forgot to log workouts properly for a certain day. <br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/b8c1400f-78fc-4765-b072-d108f6394517_2c102c76.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/b8c1400f-78fc-4765-b072-d108f6394517_rw_1920_05d7bb15.png"
+             data-srcset="/assets/b8c1400f-78fc-4765-b072-d108f6394517_rw_600_9eaedebe.png 600w,/assets/b8c1400f-78fc-4765-b072-d108f6394517_rw_1200_6fccd947.png 1200w,/assets/b8c1400f-78fc-4765-b072-d108f6394517_rw_1920_05d7bb15.png 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 41.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">AI workout suggestions<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>This is the key differentiator of this app compared to other fitness trackers out there. Since the AI-generated workouts are purely based on your personal goals and workout logs, they are much more personalized and tailored to each individual user, rather than being a generic workout plan which many users may find difficult to achieve. Key aspects to note are:<br></div><div>1. Data-driven recommendations based on workout history</div><div>2. Areas to focus on to hit fitness goals</div><div>3. Alternative workout suggestions that are also personalized</div><div>This level of personalization is still quite nascent, as I can imagine that in the future, we may be able to offer people a hyper personalized experience that draws insights from a wide range of data points, including data from wearable devices, video recordings of workouts etc. The AI could offer tips on improving form, taking breaks, hydration etc. for more fulfilling and effective workouts. User inputs could also help improve these recommendations, such as their emotional responses and feelings before and after workouts. The possibilities are endless.<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/c4c62d4b-3851-4891-9d0f-40fc22c0edea_ec817727.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/c4c62d4b-3851-4891-9d0f-40fc22c0edea_rw_1920_d0ddcbcb.png"
+             data-srcset="/assets/c4c62d4b-3851-4891-9d0f-40fc22c0edea_rw_600_bfa0ec94.png 600w,/assets/c4c62d4b-3851-4891-9d0f-40fc22c0edea_rw_1200_b699999b.png 1200w,/assets/c4c62d4b-3851-4891-9d0f-40fc22c0edea_rw_1920_d0ddcbcb.png 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 56.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/8ced223f-f0c5-46bb-8ef9-2213e058d079_0882fa5b.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/8ced223f-f0c5-46bb-8ef9-2213e058d079_rw_1920_7d9209e7.png"
+             data-srcset="/assets/8ced223f-f0c5-46bb-8ef9-2213e058d079_rw_600_3ca8ed85.png 600w,/assets/8ced223f-f0c5-46bb-8ef9-2213e058d079_rw_1200_437d0b1a.png 1200w,/assets/8ced223f-f0c5-46bb-8ef9-2213e058d079_rw_1920_7d9209e7.png 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 41.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Setting fitness goals<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>This feature allows the user to set their own personal fitness goals and their body metrics, so that the AI can offer an even higher level of personalization.<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/944395a7-6642-4cb7-95e5-a2af4a499ded_724ec28b.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/944395a7-6642-4cb7-95e5-a2af4a499ded_rw_1920_fcdda92e.png"
+             data-srcset="/assets/944395a7-6642-4cb7-95e5-a2af4a499ded_rw_600_ae519faf.png 600w,/assets/944395a7-6642-4cb7-95e5-a2af4a499ded_rw_1200_6936724d.png 1200w,/assets/944395a7-6642-4cb7-95e5-a2af4a499ded_rw_1920_fcdda92e.png 1760w,"
+             data-sizes="(max-width: 1760px) 100vw, 1760px"
+             width="1760"
+             height="0"
+             style="padding-bottom: 61.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 59px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Workout analytics</div><div class="sub-title"><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>This feature allows the user to see analytics of their past workouts, including workout duration, types of workouts completed and the most frequent exercises recorded. This is still a v1.0 of workout analytics, and there is so much more that could be accomplished with the data collected from the workouts and other health tracking apps. <br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module"  style="padding-top: px;
+padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="/assets/e599c3b8-5cfc-44a1-8749-983063e80872_a5551432.png">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="/assets/e599c3b8-5cfc-44a1-8749-983063e80872_rw_1920_f98d4d65.png"
+             data-srcset="/assets/e599c3b8-5cfc-44a1-8749-983063e80872_rw_600_df80da25.png 600w,/assets/e599c3b8-5cfc-44a1-8749-983063e80872_rw_1200_110ae812.png 1200w,/assets/e599c3b8-5cfc-44a1-8749-983063e80872_rw_1920_f98d4d65.png 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 61.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+          <section class="other-projects" data-context="page.page.other_pages" data-hover-hint="otherPages">
+            <div class="title-wrapper">
+              <div class="title-container">
+                  <h3 class="other-projects-title preserve-whitespace">You may also like</h3>
+              </div>
+            </div>
+            <div class="project-covers">
+                  <a class="project-cover js-project-cover-touch hold-space" href="/recipe-generator" data-context="pages" data-identity="id:p67e1e3bbc410db38a5eeee599bc91d74445866f35c19548004e1d">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="/assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x32_991e2927.png"
+              data-src="/assets/97d97082-02ab-4585-a367-9d6602e08b70_car_4x3_16153334.png"
+              data-srcset="/assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x640_4e486071.png 640w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x1280_dc511a5a.png 1280w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x1366_9fedf17f.png 1366w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x1920_d04b7f6d.png 1920w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x2560_07dfadc7.png 2560w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x5120_6800a70c.png 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1000px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">Recipe Generator</div>
+                            <div class="date">2025</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </section>
+        <section class="back-to-top" data-hover-hint="backToTop">
+          <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+        </section>
+        <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+          </g>
+          </svg>
+        </a>
+  </div>
+              <footer class="site-footer" data-hover-hint="footer">
+                <div class="footer-text">
+                  Powered by <a href="http://portfolio.adobe.com" target="_blank">Adobe Portfolio</a>
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936","theme":{"name":"lukas"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript" src="/site/translations.js"></script>
+  <script type="text/javascript" src="/dist/js/main.js"></script>
+</html>
