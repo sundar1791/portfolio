@@ -839,7 +839,7 @@ nav .link-title:last-child {
   text-align: left; }
 
 .logo {
-  font-family: vcsm;
+  font-family: 'Montserrat', -apple-system, sans-serif;
   font-size: 23px;
   font-style: normal;
   font-weight: 700;
@@ -857,7 +857,7 @@ nav .link-title:last-child {
     font-weight: 700; }
 
 .logo-secondary {
-  font-family: vcsm;
+  font-family: 'Montserrat', -apple-system, sans-serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -882,7 +882,7 @@ nav {
   width: 69.5%; }
   nav .gallery-title a {
     color: #000000;
-    font-family: vcsm;
+    font-family: 'Montserrat', -apple-system, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -897,7 +897,7 @@ nav {
       font-weight: 600; }
   nav .project-title a {
     color: #999999;
-    font-family: vcsm;
+    font-family: 'Montserrat', -apple-system, sans-serif;
     font-size: 17px;
     font-style: normal;
     font-weight: 500;
@@ -912,7 +912,7 @@ nav {
       font-weight: 600; }
   nav .page-title a {
     color: #000000;
-    font-family: vcsm;
+    font-family: 'Montserrat', -apple-system, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -927,7 +927,7 @@ nav {
       font-weight: 600; }
   nav .link-title a {
     color: #000000;
-    font-family: vcsm;
+    font-family: 'Montserrat', -apple-system, sans-serif;
     font-size: 17px;
     font-style: normal;
     font-weight: 500;
@@ -1057,7 +1057,7 @@ nav {
     display: none; }
   .masthead h1 {
     color: #BB0F0A;
-    font-family: vcsm;
+    font-family: 'Montserrat', -apple-system, sans-serif;
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
@@ -1068,7 +1068,7 @@ nav {
     text-transform: none; }
   .masthead p {
     color: #bb0f0a;
-    font-family: vcsm;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -1120,7 +1120,7 @@ nav {
     padding-top: 16px; } }
 
 .site-footer {
-  font-family: vcsm;
+  font-family: 'Merriweather', Georgia, serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -1151,7 +1151,7 @@ nav {
     padding-top: 41px; } }
 
 .cookie-banner {
-  font-family: vcsm;
+  font-family: 'Merriweather', Georgia, serif;
   width: 100%; }
   .cookie-banner .close-btn {
     cursor: pointer; }
@@ -1159,7 +1159,7 @@ nav {
 .lightbox-content {
   height: 100%; }
   .lightbox-content .grid__image-caption {
-    font-family: nyty; }
+    font-family: 'Merriweather', Georgia, serif; }
 
 #lightbox-wrap,
 #lightbox-inner-wrap {
@@ -1167,7 +1167,7 @@ nav {
 
 .grid__image-caption,
 .grid__image-caption-lightbox {
-  font-family: nyty; }
+  font-family: 'Merriweather', Georgia, serif; }
 
 .site-content {
   margin-left: 2%;
@@ -1561,7 +1561,7 @@ nav {
   .project-cover .title {
     color: #212121;
     float: none;
-    font-family: vcsm;
+    font-family: 'Montserrat', -apple-system, sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -1577,7 +1577,7 @@ nav {
   .project-cover .date {
     color: #ffffff;
     float: none;
-    font-family: vcsm;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1593,7 +1593,7 @@ nav {
   .project-cover .custom1 {
     color: #a9a9a9;
     float: none;
-    font-family: vcsm;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1609,7 +1609,7 @@ nav {
   .project-cover .custom2 {
     color: #a9a9a9;
     float: none;
-    font-family: vcsm;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1625,7 +1625,7 @@ nav {
   .project-cover .description {
     color: #333333;
     float: none;
-    font-family: vcsm;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
