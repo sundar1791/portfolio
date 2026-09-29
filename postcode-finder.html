@@ -1,0 +1,518 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description"  content="A multi-agent recommender that researches, explains its trade-offs and learns from every search" />
+      <meta name="twitter:card"  content="summary_large_image" />
+      <meta name="twitter:title" content="Sundar Thondikulam Subramanian - London Postcode Finder" />
+      <meta name="twitter:description" content="A multi-agent recommender that researches, explains its trade-offs and learns from every search" />
+      <meta name="twitter:image" content="/assets/postcode-finder/cover.png" />
+      <meta  property="og:title" content="Sundar Thondikulam Subramanian - London Postcode Finder" />
+      <meta  property="og:description" content="A multi-agent recommender that researches, explains its trade-offs and learns from every search" />
+      <meta  property="og:image" content="/assets/postcode-finder/cover.png" />
+      <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURUxpcU3H2DoAAAABdFJOUwBA5thmAAAADElEQVQI12NgIA0AAAAwAAHHqoWOAAAAAElFTkSuQmCC"  />
+      <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="/assets/4e893ae0b8f9ecbcc2e1d3dce3f77dcd1763504806_6057558e.css" type="text/css" />
+    <link rel="canonical" href="https://sundarsubramanian.xyz/postcode-finder" />
+      <title>Sundar Thondikulam Subramanian - London Postcode Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <style>
+      /* Case-study extras, scoped to this page only (.pcf on #project-canvas) */
+      .pcf .pcf-links { display: flex; flex-wrap: wrap; gap: 12px; padding: 8px 0 24px; }
+      .pcf .rich-text a.pcf-btn { display: inline-block; padding: 12px 22px; border: 2px solid #bb0f0a; border-radius: 4px; color: #bb0f0a; background: transparent; font-family: 'Nunito Sans', -apple-system, sans-serif; font-size: 16px; font-weight: 700; line-height: 20px; text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease; }
+      .pcf .rich-text a.pcf-btn:hover, .pcf .rich-text a.pcf-btn:focus { background: #bb0f0a; color: #fff; text-decoration: none; }
+      .pcf .rich-text a.pcf-btn.pcf-btn-primary { background: #bb0f0a; color: #fff; }
+      .pcf .rich-text a.pcf-btn.pcf-btn-primary:hover, .pcf .rich-text a.pcf-btn.pcf-btn-primary:focus { background: #8f0b08; border-color: #8f0b08; }
+      .pcf .rich-text .pcf-note { font-style: italic; color: #666; border-left: 3px solid #bb0f0a; padding: 2px 0 2px 16px; margin-bottom: 16px; }
+      .pcf .rich-text ul, .pcf .rich-text ol { margin: 0 0 16px; padding-left: 24px; }
+      .pcf .rich-text ul li, .pcf .rich-text ol li { font-family: 'Merriweather', Georgia, serif; font-size: 18px; line-height: 28px; color: #333; padding-bottom: 8px; }
+      .pcf .rich-text ul li { list-style-type: disc; }
+      .pcf .rich-text ol li { list-style-type: decimal; }
+      .pcf .rich-text li::marker { color: #bb0f0a; }
+      .pcf .rich-text .pcf-decision { padding-top: 24px; }
+      .pcf .pcf-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 16px; }
+      .pcf table.pcf-table { width: 100%; border-collapse: collapse; font-family: 'Nunito Sans', -apple-system, sans-serif; font-size: 16px; line-height: 22px; color: #333; }
+      .pcf table.pcf-table th { text-align: left; font-weight: 800; color: #bb0f0a; border-bottom: 2px solid #bb0f0a; padding: 10px 12px 10px 0; vertical-align: bottom; }
+      .pcf table.pcf-table td { border-bottom: 1px solid #e2e2e2; padding: 12px 12px 12px 0; vertical-align: top; }
+      .pcf table.pcf-table th, .pcf table.pcf-table td { overflow-wrap: normal; word-break: normal; -webkit-hyphens: auto; hyphens: auto; }
+      .pcf table.pcf-table td:first-child { font-weight: 700; }
+      .pcf .rich-text blockquote.pcf-quote { margin: 8px 0 24px; padding: 20px 24px; border-left: 4px solid #bb0f0a; background: #f5f1ee; font-family: 'Merriweather', Georgia, serif; font-style: italic; font-size: 19px; line-height: 31px; color: #333; }
+      .pcf .pcf-diagram { max-width: 500px; margin: 8px auto 24px; }
+      .pcf .pcf-diagram svg { display: block; width: 100%; height: auto; }
+      .pcf .pcf-diagram text { font-family: 'Nunito Sans', -apple-system, sans-serif; fill: #333; }
+      .pcf .pcf-diagram .n-title { font-size: 13px; font-weight: 800; }
+      .pcf .n-sub { font-size: 10.5px; fill: #666; }
+      .pcf .pcf-diagram .g-title { font-size: 11.5px; font-weight: 800; fill: #bb0f0a; }
+      .pcf .pcf-diagram .chip { font-size: 11px; font-weight: 700; }
+      .pcf .pcf-diagram .loop-label { font-size: 10.5px; font-weight: 700; fill: #bb0f0a; letter-spacing: 0.5px; }
+      .pcf .pcf-diagram .agent { fill: #fbeceb; stroke: #bb0f0a; stroke-width: 1.5; }
+      .pcf .pcf-diagram .step { fill: #f3f3f3; stroke: #9a9a9a; stroke-width: 1.2; }
+      .pcf .pcf-diagram .group { fill: none; stroke: #c9c9c9; stroke-width: 1.2; stroke-dasharray: none; }
+      .pcf .pcf-diagram .dashed { stroke-dasharray: 5 4; }
+      .pcf .pcf-diagram .edge { stroke: #555; stroke-width: 1.4; fill: none; }
+      .pcf .pcf-diagram .loop { stroke: #bb0f0a; stroke-width: 1.4; fill: none; stroke-dasharray: 6 4; }
+      .pcf .project-module-image img.pcf-img { display: block; width: 100%; height: auto; }
+      @media (max-width: 932px) {
+        .pcf .rich-text ul li, .pcf .rich-text ol li { font-size: 14px; line-height: 22px; }
+        .pcf .rich-text blockquote.pcf-quote { font-size: 15px; line-height: 25px; padding: 16px 18px; }
+        .pcf table.pcf-table { font-size: 14px; line-height: 20px; }
+        .pcf .rich-text .pcf-decision { padding-top: 16px; }
+      }
+      @media (max-width: 540px) {
+        .pcf .pcf-links { flex-direction: column; }
+        .pcf .rich-text a.pcf-btn { display: block; text-align: center; }
+        .pcf table.pcf-table { font-size: 13px; line-height: 18px; }
+        .pcf table.pcf-table th, .pcf table.pcf-table td { padding-right: 8px; }
+      }
+    </style>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+                <div class="gallery-title"><a href="/work" >Product work</a></div>
+                <div class="gallery-title"><a href="/ai-projects" >AI projects</a></div>
+      <div class="link-title">
+        <a href="https://sundarsubramanian.substack.com/" target="_blank">Substack</a>
+      </div>
+      <div class="page-title">
+        <a href="/contact" >Contact</a>
+      </div>
+          </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+                  <li>
+                    <a href="https://twitter.com/sundar1791" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="-8 -3 35 24" xml:space="preserve" class="icon"><path d="M10.4 7.4 16.9 0h-1.5L9.7 6.4 5.2 0H0l6.8 9.7L0 17.4h1.5l5.9-6.8 4.7 6.8h5.2l-6.9-10ZM8.3 9.8l-.7-1-5.5-7.6h2.4l4.4 6.2.7 1 5.7 8h-2.4L8.3 9.8Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/sundar1791" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                        c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                        C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/@sundarsubramanian" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path class="st0" d="M23.5,7.4C23.5,7.4,23.5,7.4,23.5,7.4L23.5,7.4l-5.2-2.6c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0
+                          c-0.2,0-0.4,0.1-0.5,0.3l-3,4.8l3.7,6.1L23.5,7.4C23.5,7.5,23.5,7.4,23.5,7.4z"/>
+                        <polygon class="st0" points="13,8.8 13,14.3 17.9,16.7   "/>
+                        <path class="st0" d="M18.6,17.1l4,2c0.5,0.3,0.9,0.1,0.9-0.4V9L18.6,17.1z"/>
+                        <path class="st0" d="M12.1,7.4l-5-2.5C7,4.9,6.9,4.8,6.8,4.8C6.6,4.8,6.4,5,6.4,5.3v10.9c0,0.3,0.2,0.6,0.5,0.8l4.4,2.2
+                          c0.1,0.1,0.2,0.1,0.3,0.1c0.3,0,0.5-0.2,0.5-0.6L12.1,7.4C12.1,7.5,12.1,7.4,12.1,7.4z"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+    <header class="site-header js-site-header  js-fixed-nav" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+        <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+                <div class="gallery-title"><a href="/work" >Product work</a></div>
+                <div class="gallery-title"><a href="/ai-projects" >AI projects</a></div>
+      <div class="link-title">
+        <a href="https://sundarsubramanian.substack.com/" target="_blank">Substack</a>
+      </div>
+      <div class="page-title">
+        <a href="/contact" >Contact</a>
+      </div>
+        </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+                  <li>
+                    <a href="https://twitter.com/sundar1791" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="-8 -3 35 24" xml:space="preserve" class="icon"><path d="M10.4 7.4 16.9 0h-1.5L9.7 6.4 5.2 0H0l6.8 9.7L0 17.4h1.5l5.9-6.8 4.7 6.8h5.2l-6.9-10ZM8.3 9.8l-.7-1-5.5-7.6h2.4l4.4 6.2.7 1 5.7 8h-2.4L8.3 9.8Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/sundar1791" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                        c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                        C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/@sundarsubramanian" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path class="st0" d="M23.5,7.4C23.5,7.4,23.5,7.4,23.5,7.4L23.5,7.4l-5.2-2.6c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0
+                          c-0.2,0-0.4,0.1-0.5,0.3l-3,4.8l3.7,6.1L23.5,7.4C23.5,7.5,23.5,7.4,23.5,7.4z"/>
+                        <polygon class="st0" points="13,8.8 13,14.3 17.9,16.7   "/>
+                        <path class="st0" d="M18.6,17.1l4,2c0.5,0.3,0.9,0.1,0.9-0.4V9L18.6,17.1z"/>
+                        <path class="st0" d="M12.1,7.4l-5-2.5C7,4.9,6.9,4.8,6.8,4.8C6.6,4.8,6.4,5,6.4,5.3v10.9c0,0.3,0.2,0.6,0.5,0.8l4.4,2.2
+                          c0.1,0.1,0.2,0.1,0.3,0.1c0.3,0,0.5-0.2,0.5-0.6L12.1,7.4C12.1,7.5,12.1,7.4,12.1,7.4z"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+          </ul>
+        </div>
+        <div class="hamburger-click-area js-hamburger">
+          <div class="hamburger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+    </header>
+    <div class="header-placeholder"></div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <main>
+  <div class="page-container" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+        <header class="page-header content" data-context="pages" data-identity="id:p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936" data-hover-hint="pageHeader" data-hover-hint-id="p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936">
+            <h1 class="title preserve-whitespace e2e-site-logo-text">London Postcode Finder</h1>
+            <p class="description">An agentic recommender that learns</p>
+        </header>
+      <div class="page-content js-page-content" data-context="pages" data-identity="id:p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936">
+        <div id="project-canvas" class="js-project-modules modules content pcf">
+          <div id="project-modules">
+
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><strong>One line:</strong> A multi-agent system that turns "what matters to me" into five honest, researched London neighbourhood recommendations, and gets better with every search.</div><div class="pcf-links"><a class="pcf-btn pcf-btn-primary" href="LIVE_DEMO_URL" target="_blank" rel="noopener">Try the live demo</a><a class="pcf-btn" href="LIVE_DEMO_URL/how-it-works" target="_blank" rel="noopener">How it works</a><a class="pcf-btn" href="https://github.com/sundar1791/london-postcode-finder" target="_blank" rel="noopener">Code on GitHub</a></div><div class="pcf-note">Role: product owner, architect and builder. Built part-time over ~6 months, planned as 49 user stories across 8 milestones, using Claude Code for implementation and doing the architectural decisions, data work and evals myself.</div></div>
+</div>
+
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/search-screen.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/search-screen.png" alt="The London Postcode Finder search screen: 100 tokens split across safety, green space, nightlife, transport and affordability, with an optional free-text context box" loading="lazy">
+     </div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">1. The problem<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>Choosing where to live in London is a trade-off problem disguised as a search problem.</div><div>Property portals let you filter by price, bedrooms and area. But the decision someone new to London is actually making sounds more like: <em>"I want to feel safe, I need to get to work easily, I'd like a park nearby, and I can't spend more than X."</em> Those factors pull against each other. The places that score well on one usually cost you on another. Today, people resolve that by opening fifteen tabs: crime maps, TfL, rent reports, Reddit threads. Then they stitch it together in their head.</div><div>Two things make it hard:</div><ul><li><strong>The trade-offs are personal.</strong> The same district is right for one person and wrong for another.</li><li><strong>The data is stale, and the reality isn't.</strong> Official datasets are monthly or annual. What residents say this year — a new line, a closed venue, a policing crackdown — lives in news and forums.</li></ul><div><strong>Hypothesis:</strong> if a system can make people state their trade-offs explicitly, and then combine hard data with current qualitative research, it can replace the fifteen-tab process with five recommendations you can defend.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">2. The experience<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><ul><li><strong>100 tokens across 5 dimensions:</strong> safety, green space, nightlife, transport, affordability. A token budget, not "rate each 1–5", because a budget <em>forces</em> a trade-off. You can't say everything matters most.</li><li><strong>Optional free-text context</strong> (≤500 characters) for what sliders can't express, e.g. "I'm terrified of crime" or "I need a nursery nearby for my daughter."</li><li><strong>Transparent agent activity.</strong> You watch the system decide: how it read your context, whether it re-weighted your tokens, what it researched.</li><li><strong>Five recommendations:</strong> each has a verdict, rationale, an explicit trade-off, and a practical tip.</li></ul></div>
+</div>
+
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/agent-timeline.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/agent-timeline.png" alt="The live agent timeline: each step of the run appears as it happens, showing how the orchestrator read the context, whether it re-weighted the tokens and what the research agents looked up" loading="lazy">
+     </div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">3. Why agentic — and where it deliberately isn't<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>The most important product decision was <strong>where not to use an LLM.</strong></div><div class="pcf-table-wrap"><table class="pcf-table"><thead><tr><th>Part of the problem</th><th>Nature</th><th>Solution</th></tr></thead><tbody><tr><td>Scoring 40 districts on crime, parks, nightlife, transport, rent</td><td>Deterministic, factual</td><td>Plain data pipelines (<strong>scorers</strong>), pre-computed and cached</td></tr><tr><td>Interpreting ambiguous user context</td><td>Judgement</td><td><strong>Orchestrator agent</strong></td></tr><tr><td>Needs no dataset covers ("near a nursery")</td><td>Open-ended data gathering</td><td><strong>Context sub-agent</strong>, spawned on demand</td></tr><tr><td>What it's like to live there <em>now</em></td><td>Unstructured, current</td><td><strong>Research agents</strong> with web search</td></tr><tr><td>Turning it all into advice</td><td>Reasoning and writing</td><td><strong>Synthesiser agent</strong></td></tr></tbody></table></div><div>Scorers are not agents. They are cheap, fast, testable and never hallucinate. Agency is reserved for the four places where judgement actually adds value.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">4. Architecture<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="pcf-diagram">
+<svg viewBox="0 0 360 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pcf-arch-title pcf-arch-desc">
+  <title id="pcf-arch-title">London Postcode Finder pipeline</title>
+  <desc id="pcf-arch-desc">Knowledge Loader, then Orchestrator, which spawns a Context Sub-Agent only if needed. Then 5 Scorers in parallel from cache in under 2 seconds, Synthesiser Pass 1 (weighted ranking in pure Python), 5 Research Agents in parallel doing live web search on the top 5 only, Synthesiser Pass 2 (recommendations and learnings), then Knowledge Writer and Distiller (every N searches), which loop back to the Knowledge Loader.</desc>
+  <defs>
+    <marker id="pcf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+    <marker id="pcf-arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#bb0f0a"/></marker>
+  </defs>
+
+  <!-- Knowledge Loader -->
+  <rect class="step" x="40" y="10" width="300" height="40" rx="6"/>
+  <text class="n-title" x="190" y="29" text-anchor="middle">Knowledge Loader</text>
+  <text class="n-sub" x="190" y="43" text-anchor="middle">distilled brain + last 10 learnings</text>
+  <line class="edge" x1="115" y1="50" x2="115" y2="64" marker-end="url(#pcf-arrow)"/>
+
+  <!-- Orchestrator + conditional sub-agent -->
+  <rect class="agent" x="40" y="66" width="150" height="44" rx="6"/>
+  <text class="n-title" x="115" y="86" text-anchor="middle">Orchestrator</text>
+  <text class="n-sub" x="115" y="101" text-anchor="middle">ignore · adjust · spawn</text>
+  <line class="edge dashed" x1="190" y1="88" x2="204" y2="88" marker-end="url(#pcf-arrow)"/>
+  <rect class="agent dashed" x="206" y="66" width="134" height="44" rx="6"/>
+  <text class="n-title" x="273" y="86" text-anchor="middle">Context Sub-Agent</text>
+  <text class="n-sub" x="273" y="101" text-anchor="middle">only if needed</text>
+  <line class="edge" x1="115" y1="110" x2="115" y2="128" marker-end="url(#pcf-arrow)"/>
+  <line class="edge dashed" x1="273" y1="110" x2="273" y2="128" marker-end="url(#pcf-arrow)"/>
+
+  <!-- 5 Scorers (parallel group) -->
+  <rect class="group" x="40" y="130" width="300" height="94" rx="8"/>
+  <text class="g-title" x="190" y="147" text-anchor="middle">5 Scorers in parallel · from cache, &lt;2 s</text>
+  <rect class="step" x="52" y="156" width="88" height="26" rx="4"/><text class="chip" x="96" y="173" text-anchor="middle">Safety</text>
+  <rect class="step" x="146" y="156" width="88" height="26" rx="4"/><text class="chip" x="190" y="173" text-anchor="middle">Green space</text>
+  <rect class="step" x="240" y="156" width="88" height="26" rx="4"/><text class="chip" x="284" y="173" text-anchor="middle">Nightlife</text>
+  <rect class="step" x="99" y="188" width="88" height="26" rx="4"/><text class="chip" x="143" y="205" text-anchor="middle">Transport</text>
+  <rect class="step" x="193" y="188" width="88" height="26" rx="4"/><text class="chip" x="237" y="205" text-anchor="middle">Affordability</text>
+  <line class="edge" x1="190" y1="224" x2="190" y2="240" marker-end="url(#pcf-arrow)"/>
+
+  <!-- Synthesiser Pass 1 -->
+  <rect class="step" x="40" y="242" width="300" height="44" rx="6"/>
+  <text class="n-title" x="190" y="262" text-anchor="middle">Synthesiser Pass 1</text>
+  <text class="n-sub" x="190" y="277" text-anchor="middle">weighted ranking, pure Python</text>
+  <line class="edge" x1="190" y1="286" x2="190" y2="302" marker-end="url(#pcf-arrow)"/>
+
+  <!-- 5 Research Agents (parallel group) -->
+  <rect class="group" x="40" y="304" width="300" height="66" rx="8"/>
+  <text class="g-title" x="190" y="321" text-anchor="middle">5 Research Agents in parallel · live web search</text>
+  <rect class="agent" x="52" y="332" width="50" height="26" rx="4"/><text class="chip" x="77" y="349" text-anchor="middle">#1</text>
+  <rect class="agent" x="109" y="332" width="50" height="26" rx="4"/><text class="chip" x="134" y="349" text-anchor="middle">#2</text>
+  <rect class="agent" x="166" y="332" width="50" height="26" rx="4"/><text class="chip" x="191" y="349" text-anchor="middle">#3</text>
+  <rect class="agent" x="223" y="332" width="50" height="26" rx="4"/><text class="chip" x="248" y="349" text-anchor="middle">#4</text>
+  <rect class="agent" x="280" y="332" width="50" height="26" rx="4"/><text class="chip" x="305" y="349" text-anchor="middle">#5</text>
+  <line class="edge" x1="190" y1="370" x2="190" y2="386" marker-end="url(#pcf-arrow)"/>
+
+  <!-- Synthesiser Pass 2 -->
+  <rect class="agent" x="40" y="388" width="300" height="44" rx="6"/>
+  <text class="n-title" x="190" y="408" text-anchor="middle">Synthesiser Pass 2</text>
+  <text class="n-sub" x="190" y="423" text-anchor="middle">recommendations + learnings</text>
+  <line class="edge" x1="110" y1="432" x2="110" y2="448" marker-end="url(#pcf-arrow)"/>
+
+  <!-- Knowledge Writer -> Distiller -->
+  <rect class="step" x="40" y="450" width="140" height="44" rx="6"/>
+  <text class="n-title" x="110" y="470" text-anchor="middle">Knowledge Writer</text>
+  <text class="n-sub" x="110" y="485" text-anchor="middle">2–3 learnings per search</text>
+  <line class="edge" x1="180" y1="472" x2="198" y2="472" marker-end="url(#pcf-arrow)"/>
+  <rect class="step" x="200" y="450" width="140" height="44" rx="6"/>
+  <text class="n-title" x="270" y="470" text-anchor="middle">Distiller</text>
+  <text class="n-sub" x="270" y="485" text-anchor="middle">every N searches</text>
+
+  <!-- Learning loop back to the Knowledge Loader -->
+  <path class="loop" d="M270,494 V510 H20 V30 H38" marker-end="url(#pcf-arrow-red)"/>
+  <text class="loop-label" transform="translate(14 270) rotate(-90)" text-anchor="middle">LEARNING LOOP</text>
+
+  <!-- Legend -->
+  <rect class="agent" x="40" y="530" width="14" height="12" rx="2"/>
+  <text class="n-sub" x="60" y="540">Agent (Claude)</text>
+  <rect class="step" x="150" y="530" width="14" height="12" rx="2"/>
+  <text class="n-sub" x="170" y="540">Pipeline step</text>
+  <line class="edge dashed" x1="250" y1="536" x2="270" y2="536"/>
+  <text class="n-sub" x="276" y="540">Conditional</text>
+</svg>
+</div><div>It is built on LangGraph, with shared state flowing through the nodes. Claude Sonnet handles the reasoning nodes and Claude Haiku handles high-volume research. The backend is Python/FastAPI and the data store is Supabase (Postgres).</div><div><strong>Two passes.</strong> Pass 1 is fast and exhaustive: every district, from cached data. Pass 2 is slow and expensive: live web research, but only on the five shortlisted districts. Research cost scales with the shortlist, not with London.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">5. Key decisions and trade-offs<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">1. Cache the data, don't call APIs live.<br></div><div class="sub-title"><br></div><div>Scoring 40 districts live meant 30–60 seconds of flaky public APIs, with Overpass timeouts and police API zeros. I pre-compute all 200 scores (40 districts × 5 dimensions) monthly and serve them from a table, which takes Pass 1 under 2 seconds.</div><div><em>Trade-off:</em> data is up to a month old. That's acceptable for crime statistics and park counts, and the freshness gap is exactly what Pass 2 research fills.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title pcf-decision">2. The orchestrator can ignore, adjust, or spawn — and when in doubt, it spawns.<br></div><div class="sub-title"><br></div><div>"I love parks" is <em>emphasis</em>, so it adjusts the green weighting. "The park should have nice views" is <em>qualitative</em>: it doesn't change the maths, it shapes the language. "I need a nursery" is a <em>new dimension</em>, so it spawns a sub-agent to fetch data.</div><div><em>Why the bias toward spawning:</em> the errors are asymmetric. A false spawn costs latency, but a false weight adjustment silently distorts every result, and nobody notices.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title pcf-decision">3. A spawned need is a filter, not a weight.<br></div><div class="sub-title"><br></div><div>"I need a nursery" is a requirement, not a preference. So nursery scores don't get blended into the ranking. Districts with none nearby are removed from the top 10 before the top 5 is chosen.</div><div><em>Trade-off:</em> sometimes fewer than 5 districts survive. That's the honest answer, rather than padding the list with districts that fail the requirement.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title pcf-decision">4. Research only the shortlist, with the cheaper model.<br></div><div class="sub-title"><br></div><div>In one early day of testing I spent $4.56, almost entirely on Sonnet reading web search results. Switching research agents to Haiku and capping them at two searches each brought a full run to roughly <strong>$0.10–0.20</strong>. Sonnet stays on the two steps users actually feel: interpreting their context and writing their recommendations.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title pcf-decision">5. Memory by distillation, not RAG.<br></div><div class="sub-title"><br></div><div>The obvious move was a vector store. I chose not to. RAG earns its keep when knowledge is large and varied and you need to <em>select</em> what's relevant. This domain is the opposite: narrow and repetitive (~20–30 recurring intents, 5 fixed dimensions). After hundreds of searches you don't need to retrieve similar examples. You need a few sharp rules. So the system keeps two tiers, the way an LLM handles a long conversation:</div><ul><li>a <strong>distilled brain</strong> of compressed heuristics, always injected</li><li>the <strong>last 10 raw learnings</strong>, specific and recent</li></ul><div><em>When I'd switch:</em> multiple cities or many more dimensions would make the domain broad, and then retrieval becomes the right tool.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title pcf-decision">6. Degrade gracefully, everywhere.<br></div><div class="sub-title"><br></div><div>If a public API is down, that district scores 0 and the run continues. If saving a learning fails, the user still gets their answer. Background enrichment is never allowed to break the core experience.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title pcf-decision">7. Don't fabricate structure.<br></div><div class="sub-title"><br></div><div>The learnings table was designed for four decomposed fields, but the synthesiser produces one narrative sentence. Rather than force it to invent the other three, I store the sentence and leave those fields empty until a later version genuinely produces them.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">6. Evals: proving it decides <em>well</em>, not just that it runs<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>A pipeline can run perfectly and still make bad decisions. So evals do three separate jobs:</div><ol><li><strong>Baseline correctness.</strong> A deterministic harness asserts 15 real-world rank orderings across all five dimensions. For example, N21 (Winchmore Hill) must score safer than WC1A (Holborn), and N4, which borders Finsbury Park, must score greener than the City. All 15 pass. It reads the cache directly, so a failure means <em>the data</em> is wrong, not the wrapper code.</li><li><strong>Regression detection.</strong> An end-to-end suite runs three canonical journeys (no context, re-weighting, spawn) against real models. It caught a real regression: after migrating to a newer model, the orchestrator started truncating its JSON on emotionally-worded inputs like "I'm terrified of crime". The cause was a larger tokenizer plus thinking tokens eating the output budget. The fix was one line. Without the suite, it would have shipped.</li><li><strong>Judgement quality (next).</strong> An LLM-as-judge harness is next. It grades whether the orchestrator's ignore/adjust/spawn calls are <em>defensible</em> on 15 designed boundary cases, and whether recommendations reference the user's actual top priority. The point is to turn "it looked fine" into a score I can track.</li></ol></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">7. Continuous learning<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>Every search writes 2–3 learnings. The next search reads them before it reasons. Every N searches, a distiller rewrites the brain: it merges, refines and retires heuristics rather than appending.</div><div>A real learning the system wrote to itself after one search:</div><blockquote class="pcf-quote">"Central London postcodes like SW1A can score deceptively well on safety-weighted models because government security presence lowers crime statistics while making the area unsuitable for normal residential living, so synthesisers should flag population and residential character data alongside crime scores for such districts."</blockquote><div>That's a non-obvious insight. Heavy policing makes Whitehall look safe, but nobody lives there. Once it's distilled, every future search carries that judgement without having to rediscover it. The <code>/learning</code> page shows the current brain and its version history.</div></div>
+</div>
+
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/learning-page.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/learning-page.png" alt="The /learning page: the current distilled brain of heuristics, the most recent raw learnings, and the version history of the brain" loading="lazy">
+     </div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>A related moment: when a user said they were terrified of crime, the synthesiser actively <em>warned against</em> its own fifth-ranked result (N4). It cited documented local crime concerns, instead of dressing the ranking up. The system is allowed to disagree with its own maths when the maths misses something.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">8. What broke, and what I learned<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><ul><li><strong>Schema drift.</strong> A table designed in month one rejected real data in month five: the columns were NOT NULL and the category names used American spelling. <em>Lesson:</em> test the write path end-to-end as soon as both sides exist.</li><li><strong>Model deprecation mid-build.</strong> The model I built on reached end-of-life. The replacement returned its reasoning in a new format and used more tokens. <em>Lesson:</em> model choice is a dependency with a lifecycle, and evals are what make migrations safe.</li><li><strong>"Invisible" API rules.</strong> The OpenStreetMap API began rejecting requests without an identifying User-Agent. It surfaced as a vague 406 error, and it would have silently zeroed two dimensions on the next monthly refresh. <em>Lesson:</em> scheduled jobs fail quietly, so they need the same scrutiny as user paths.</li><li><strong>Lost work.</strong> A whole story was lost once because it was never pushed. <em>Lesson:</em> commit and push the moment something works. That became a hard rule.</li></ul></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">9. Beyond postcodes<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>The pattern is general. Put deterministic scorers on trustworthy signals. Use agents only where judgement is needed. Treat hard requirements as filters. Keep a learning loop that compresses experience into rules, and hold evals over all of it. The same shape fits domains like fleet telematics: vehicle-health signals as scorers, an agent interpreting a fleet manager's context, research on the few vehicles that matter, and a system that learns which interventions actually prevented downtime.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">10. By the numbers<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="pcf-table-wrap"><table class="pcf-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Districts × dimensions</td><td>40 × 5 (200 cached scores)</td></tr><tr><td>Pass 1 latency</td><td>under 2 s</td></tr><tr><td>Full run</td><td>~30–60 s (longer when a spawn fires first time)</td></tr><tr><td>Cost per search</td><td>~$0.10–0.20</td></tr><tr><td>Agents / scorers</td><td>4 agent roles, 5 scorers</td></tr><tr><td>Deterministic eval</td><td>15 / 15 rank-order assertions pass</td></tr><tr><td>Plan</td><td>49 user stories across 8 milestones</td></tr></tbody></table></div></div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+          <section class="other-projects" data-context="page.page.other_pages" data-hover-hint="otherPages">
+            <div class="title-wrapper">
+              <div class="title-container">
+                  <h3 class="other-projects-title preserve-whitespace">You may also like</h3>
+              </div>
+            </div>
+            <div class="project-covers">
+                  <a class="project-cover js-project-cover-touch hold-space" href="/recipe-generator" data-context="pages" data-identity="id:p67e1e3bbc410db38a5eeee599bc91d74445866f35c19548004e1d">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="/assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x32_991e2927.png"
+              data-src="/assets/97d97082-02ab-4585-a367-9d6602e08b70_car_4x3_16153334.png"
+              data-srcset="/assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x640_4e486071.png 640w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x1280_dc511a5a.png 1280w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x1366_9fedf17f.png 1366w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x1920_d04b7f6d.png 1920w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x2560_07dfadc7.png 2560w, /assets/97d97082-02ab-4585-a367-9d6602e08b70_carw_4x3x5120_6800a70c.png 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1000px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">Recipe Generator</div>
+                            <div class="date">2025</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="project-cover js-project-cover-touch hold-space" href="/personal-trainer" data-context="pages" data-identity="id:p67e1ee694fd2177cb14a2e376aab9dfd718184c0c751e71d20936">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="/assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x32_1b0a4377.png"
+              data-src="/assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x2565_6f457bf5.png"
+              data-srcset="/assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x640_63b8864d.png 640w, /assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x1280_9880949c.png 1280w, /assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x1366_3fd2d94a.png 1366w, /assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x1920_1b161445.png 1920w, /assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x2560_9ef08fea.png 2560w, /assets/868bc228-95c5-4694-ab6e-cc41f76dcc9f_rwc_0x0x2565x1924x2565_6f457bf5.png 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(1000px / 4)"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">AI Personal trainer</div>
+                            <div class="date">2025</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </section>
+        <section class="back-to-top" data-hover-hint="backToTop">
+          <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+        </section>
+        <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+          </g>
+          </svg>
+        </a>
+  </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"postcode-finder","theme":{"name":"lukas"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript" src="/site/translations.js"></script>
+  <script type="text/javascript" src="/dist/js/main.js"></script>
+</html>
