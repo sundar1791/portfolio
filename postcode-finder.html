@@ -7,10 +7,10 @@
       <meta name="twitter:card"  content="summary_large_image" />
       <meta name="twitter:title" content="Sundar Thondikulam Subramanian - London Postcode Finder" />
       <meta name="twitter:description" content="A multi-agent recommender that researches, explains its trade-offs and learns from every search" />
-      <meta name="twitter:image" content="/assets/postcode-finder/cover.png" />
+      <meta name="twitter:image" content="https://sundarsubramanian.xyz/assets/postcode-finder/cover.png" />
       <meta  property="og:title" content="Sundar Thondikulam Subramanian - London Postcode Finder" />
       <meta  property="og:description" content="A multi-agent recommender that researches, explains its trade-offs and learns from every search" />
-      <meta  property="og:image" content="/assets/postcode-finder/cover.png" />
+      <meta  property="og:image" content="https://sundarsubramanian.xyz/assets/postcode-finder/cover.png" />
       <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURUxpcU3H2DoAAAABdFJOUwBA5thmAAAADElEQVQI12NgIA0AAAAwAAHHqoWOAAAAAElFTkSuQmCC"  />
       <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
       <link rel="stylesheet" href="/assets/4e893ae0b8f9ecbcc2e1d3dce3f77dcd1763504806_6057558e.css" type="text/css" />
@@ -71,6 +71,8 @@
       .pcf .pcf-diagram .edge { stroke: #555; stroke-width: 1.4; fill: none; }
       .pcf .pcf-diagram .loop { stroke: #bb0f0a; stroke-width: 1.4; fill: none; stroke-dasharray: 6 4; }
       .pcf .project-module-image img.pcf-img { display: block; width: 100%; height: auto; }
+      .pcf .project-module-image img.pcf-img-narrow { max-width: 390px; margin: 0 auto; box-shadow: 0 0 0 1px #e2e2e2; }
+      .pcf .module-caption-container .module-caption { font-family: 'Nunito Sans', -apple-system, sans-serif; font-size: 15px; line-height: 22px; color: #666; font-style: italic; text-align: center; padding: 12px 0 8px; }
       @media (max-width: 932px) {
         .pcf .rich-text ul li, .pcf .rich-text ol li { font-size: 14px; line-height: 22px; }
         .pcf .rich-text blockquote.pcf-quote { font-size: 15px; line-height: 25px; padding: 16px 18px; }
@@ -210,13 +212,7 @@
 
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
-  <div class="rich-text js-text-editable module-text"><div><strong>One line:</strong> A multi-agent system that turns "what matters to me" into five honest, researched London neighbourhood recommendations, and gets better with every search.</div><div class="pcf-links"><a class="pcf-btn pcf-btn-primary" href="LIVE_DEMO_URL" target="_blank" rel="noopener">Try the live demo</a><a class="pcf-btn" href="LIVE_DEMO_URL/how-it-works" target="_blank" rel="noopener">How it works</a><a class="pcf-btn" href="https://github.com/sundar1791/london-postcode-finder" target="_blank" rel="noopener">Code on GitHub</a></div><div class="pcf-note">Role: product owner, architect and builder. Built part-time, planned as 49 user stories across 8 milestones, using Claude Code for implementation and doing the architectural decisions, data work and evals myself.</div></div>
-</div>
-
-              <div class="project-module module image project-module-image js-js-project-module">
-     <div class="js-lightbox" data-src="/assets/postcode-finder/search-screen.png">
-           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/search-screen.png" alt="The London Postcode Finder search screen: 100 tokens split across safety, green space, nightlife, transport and affordability, with an optional free-text context box" loading="lazy">
-     </div>
+  <div class="rich-text js-text-editable module-text"><div><strong>One line:</strong> A multi-agent system that turns "what matters to me" into five honest, researched London neighbourhood recommendations, and gets better with every search.</div><div class="pcf-links"><a class="pcf-btn pcf-btn-primary" href="https://postcodes.sundarsubramanian.xyz" target="_blank" rel="noopener">Try the live demo</a><a class="pcf-btn" href="https://postcodes.sundarsubramanian.xyz/how-it-works" target="_blank" rel="noopener">How it works</a><a class="pcf-btn" href="https://github.com/sundar1791/london-postcode-finder" target="_blank" rel="noopener">Code on GitHub</a></div><div class="pcf-note">Role: product owner, architect and builder. Built part-time, planned as 49 user stories across 8 milestones, using Claude Code for implementation and doing the architectural decisions, data work and evals myself.</div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
@@ -240,9 +236,12 @@ padding-bottom: px;
 </div>
 
               <div class="project-module module image project-module-image js-js-project-module">
-     <div class="js-lightbox" data-src="/assets/postcode-finder/agent-timeline.png">
-           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/agent-timeline.png" alt="The live agent timeline: each step of the run appears as it happens, showing how the orchestrator read the context, whether it re-weighted the tokens and what the research agents looked up" loading="lazy">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/search.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/search.png" alt="The search screen with the Family preset applied: 35 tokens on safety, 30 on green space, 0 on nightlife, 15 on transport and 20 on affordability, and the context box reading &quot;I need a nursery nearby for my daughter&quot;" loading="lazy">
      </div>
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>The search screen: a Family allocation of 100 tokens, plus a need the sliders can't express.</div></div>
+    </div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
@@ -253,6 +252,15 @@ padding-bottom: px;
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
   <div class="rich-text js-text-editable module-text"><div>The most important product decision was <strong>where not to use an LLM.</strong></div><div class="pcf-table-wrap"><table class="pcf-table"><thead><tr><th>Part of the problem</th><th>Nature</th><th>Solution</th></tr></thead><tbody><tr><td>Scoring 40 districts on crime, parks, nightlife, transport, rent</td><td>Deterministic, factual</td><td>Plain data pipelines (<strong>scorers</strong>), pre-computed and cached</td></tr><tr><td>Interpreting ambiguous user context</td><td>Judgement</td><td><strong>Orchestrator agent</strong></td></tr><tr><td>Needs no dataset covers ("near a nursery")</td><td>Open-ended data gathering</td><td><strong>Context sub-agent</strong>, spawned on demand</td></tr><tr><td>What it's like to live there <em>now</em></td><td>Unstructured, current</td><td><strong>Research agents</strong> with web search</td></tr><tr><td>Turning it all into advice</td><td>Reasoning and writing</td><td><strong>Synthesiser agent</strong></td></tr></tbody></table></div><div>Scorers are not agents. They are cheap, fast, testable and never hallucinate. Agency is reserved for the four places where judgement actually adds value.</div></div>
+</div>
+
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/timeline.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/timeline.png" alt="The live agent timeline for that search: the orchestrator reads the nursery request and spawns a context agent, which finds nurseries in 22 of 40 districts; the scorers rank the districts, KT1 is dropped from the shortlist, and research agents gather 8 to 11 findings for each of E11, N4, E1, HA1 and DA1" loading="lazy">
+     </div>
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>The agent timeline from a recorded run. The orchestrator spawns a nursery agent, KT1 is filtered out, and five research agents go to the web.</div></div>
+    </div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
@@ -344,6 +352,15 @@ padding-bottom: px;
 </div><div>It is built on LangGraph, with shared state flowing through the nodes. Claude Sonnet handles the reasoning nodes and Claude Haiku handles high-volume research. The backend is Python/FastAPI and the data store is Supabase (Postgres).</div><div><strong>Two passes.</strong> Pass 1 is fast and exhaustive: every district, from cached data. Pass 2 is slow and expensive: live web research, but only on the five shortlisted districts. Research cost scales with the shortlist, not with London.</div></div>
 </div>
 
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/how-it-works.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/how-it-works.png" alt="The pipeline diagram from the live site's How it works page: Knowledge Loader, Orchestrator, optional Context Sub-Agent, five parallel scorers, Synthesiser pass one, five parallel research agents, Synthesiser pass two, Knowledge Writer and Distiller, with a dashed memory loop back to the start" loading="lazy">
+     </div>
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>The same pipeline as it appears on the live site's How it works page.</div></div>
+    </div>
+</div>
+
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
@@ -399,13 +416,25 @@ padding-bottom: px;
 </div>
 
               <div class="project-module module image project-module-image js-js-project-module">
-     <div class="js-lightbox" data-src="/assets/postcode-finder/learning-page.png">
-           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/learning-page.png" alt="The /learning page: the current distilled brain of heuristics, the most recent raw learnings, and the version history of the brain" loading="lazy">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/learning.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/learning.png" alt="The /learning page: the current rules grouped into interpreting user context, token allocation patterns and district insights, a counter of searches run and the next rewrite, the latest raw notes, and the history of how the rules changed after search 10" loading="lazy">
      </div>
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>The /learning page: the distilled rules, the latest raw notes, and the history of each rewrite.</div></div>
+    </div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
   <div class="rich-text js-text-editable module-text"><div>A related moment: when a user said they were terrified of crime, the synthesiser actively <em>warned against</em> its own fifth-ranked result (N4). It cited documented local crime concerns, instead of dressing the ranking up. The system is allowed to disagree with its own maths when the maths misses something.</div></div>
+</div>
+
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/results.png">
+           <img class="e2e-site-project-module-image pcf-img" src="/assets/postcode-finder/results.png" alt="The top two of five recommendations: E11 Leytonstone &amp; Wanstead and N4 Finsbury Park, each with a verdict, rationale, trade-off, practical tip and per-dimension scores. The N4 card says no district-level crime statistics were found, which it calls a gap given safety is the user's highest-weighted factor" loading="lazy">
+     </div>
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>The first two recommendations. N4 says outright that its research found no crime data for the factor this user weighted highest.</div></div>
+    </div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
@@ -436,6 +465,15 @@ padding-bottom: px;
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
   <div class="rich-text js-text-editable module-text"><div class="pcf-table-wrap"><table class="pcf-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Districts × dimensions</td><td>40 × 5 (200 cached scores)</td></tr><tr><td>Pass 1 latency</td><td>under 2 s</td></tr><tr><td>Full run</td><td>~30–60 s (longer when a spawn fires first time)</td></tr><tr><td>Cost per search</td><td>~$0.10–0.20</td></tr><tr><td>Agents / scorers</td><td>4 agent roles, 5 scorers</td></tr><tr><td>Deterministic eval</td><td>15 / 15 rank-order assertions pass</td></tr><tr><td>Plan</td><td>49 user stories across 8 milestones</td></tr></tbody></table></div></div>
+</div>
+
+              <div class="project-module module image project-module-image js-js-project-module">
+     <div class="js-lightbox" data-src="/assets/postcode-finder/mobile.png">
+           <img class="e2e-site-project-module-image pcf-img pcf-img-narrow" src="/assets/postcode-finder/mobile.png" alt="The first recommendation, E11 Leytonstone &amp; Wanstead, on a 390px-wide phone screen, with the score bars stacked below the rationale, trade-off and tip" loading="lazy">
+     </div>
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>On a phone, each recommendation stacks into a single column.</div></div>
+    </div>
 </div>
 
           </div>

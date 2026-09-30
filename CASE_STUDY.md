@@ -2,7 +2,7 @@
 
 **One line:** A multi-agent system that turns "what matters to me" into five honest, researched London neighbourhood recommendations, and gets better with every search.
 
-**Live demo:** [LIVE_DEMO_URL] · **Code:** https://github.com/sundar1791/london-postcode-finder · **How it works:** [LIVE_DEMO_URL]/how-it-works
+**Live demo:** https://postcodes.sundarsubramanian.xyz · **Code:** https://github.com/sundar1791/london-postcode-finder · **How it works:** https://postcodes.sundarsubramanian.xyz/how-it-works
 
 > Role: product owner, architect and builder. Built part-time over ~6 months, planned as 49 user stories across 8 milestones, using Claude Code for implementation and doing the architectural decisions, data work and evals myself.
 
