@@ -228,7 +228,17 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">2. The experience<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">2. Why not a chatbot<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>Chatbots are the default interface for AI products right now: a blank box and "ask me anything". For this problem I think that's the wrong shape.</div><div>Someone new to London doesn't know what to ask. A chat box hands them the hardest part of the job, which is working out what matters and how much, and then answers whatever they happened to type. Two people with the same needs get different answers because they phrased them differently. And a conversation never forces the question that actually decides where you live: <em>what are you willing to give up?</em></div><div>So I went the other way: structure first, free text last. People making a decision like this need constraints and guardrails that help them reach it themselves, not an oracle that makes it for them. That's where the token allocator came from.</div><ul><li><strong>A budget makes the trade-off explicit.</strong> 100 tokens across five dimensions. More on safety means less somewhere else, so users state their priorities in the one form that can actually rank districts.</li><li><strong>It's legible and repeatable.</strong> The same allocation always produces the same first-pass shortlist. Move one slider, hit Redo, and see what changes. That's much harder with a paragraph of chat.</li><li><strong>The decision stays with the user.</strong> The system explains the trade-offs rather than picking a winner inside a conversation. Every recommendation shows the scores it came from.</li></ul><div><strong>The comment box is the escape hatch.</strong> Five pre-decided dimensions will never cover everyone. "I need a nursery nearby" or "I cycle everywhere" don't fit on a slider. So there's an optional box, capped at 500 characters, for whatever the criteria miss. It isn't a chat. The orchestrator reads it once and decides whether to ignore it, shift the weights, or send out an agent to measure something new. Structure by default, flexibility when the structure isn't enough.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">3. The experience<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -247,7 +257,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">3. Why agentic — and where it deliberately isn't<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">4. Why agentic — and where it deliberately isn't<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -266,7 +276,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">4. Architecture<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">5. Architecture<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -349,7 +359,7 @@ padding-bottom: px;
   <line class="edge dashed" x1="250" y1="536" x2="270" y2="536"/>
   <text class="n-sub" x="276" y="540">Conditional</text>
 </svg>
-</div><div>It is built on LangGraph, with shared state flowing through the nodes. Claude Sonnet handles the reasoning nodes and Claude Haiku handles high-volume research. The backend is Python/FastAPI and the data store is Supabase (Postgres).</div><div><strong>Two passes.</strong> Pass 1 is fast and exhaustive: every district, from cached data. Pass 2 is slow and expensive: live web research, but only on the five shortlisted districts. Research cost scales with the shortlist, not with London.</div></div>
+</div><div><strong>Two passes.</strong> Pass 1 is fast and exhaustive: every district, from cached data. Pass 2 is slow and expensive: live web research, but only on the five shortlisted districts. Research cost scales with the shortlist, not with London.</div><div class="sub-title pcf-decision">Why layers, not one deep-research agent<br></div><div class="sub-title"><br></div><div>The tempting build was a single research agent: hand it the user's priorities, let it search the web, and wait for an answer. I didn't build it that way, for three reasons.</div><ul><li><strong>It wastes tokens.</strong> An open-ended agent re-researches London from scratch on every search. That means dozens of searches and pages of reading to rediscover things like "Richmond is green", which a public dataset already knows. Most of that spend buys nothing.</li><li><strong>It's slow and unpredictable.</strong> Deep research runs for minutes, and its path and cost change from run to run. That doesn't work for a web app with a per-search budget.</li><li><strong>It's hard to check.</strong> When one agent does everything, you can't tell whether a bad answer came from bad data or bad reasoning.</li></ul><div>Layers fix all three. Cheap, deterministic scorers narrow 40 districts to 5 using data that's already cached. Only then does research run: one bounded agent per shortlisted district, on the cheaper model, with at most two searches each. The synthesiser weighs both. Each layer does the one thing it's good at, and a whole search costs roughly $0.10–0.20.</div></div>
 </div>
 
               <div class="project-module module image project-module-image js-js-project-module">
@@ -364,7 +374,17 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">5. Key decisions and trade-offs<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">6. Tech stack, and why it fits<br></div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div>Each choice follows from the shape of the problem: a fixed pipeline with parallel steps, slow public data, a run of a minute or so that the user watches, and a memory that has to survive between searches.</div><div class="pcf-table-wrap"><table class="pcf-table"><thead><tr><th>Layer</th><th>Choice</th><th>Why it fits</th></tr></thead><tbody><tr><td>Agent orchestration</td><td>LangGraph (Python)</td><td>The pipeline is a graph, not a chat loop: fixed steps, one conditional branch (the spawn), two fan-outs of five parallel workers, and shared state that every node reads and writes. LangGraph expresses exactly that, and keeps the flow inspectable and testable node by node.</td></tr><tr><td>Models</td><td>Claude Sonnet and Claude Haiku</td><td>Sonnet runs the steps users actually feel: interpreting their context, writing the recommendations, and distilling the memory. Haiku runs the high-volume research reading, where a cheaper model is good enough.</td></tr><tr><td>Web research</td><td>Claude's built-in web search</td><td>Research agents search inside the same API call, so there's no separate search provider or scraper to integrate, pay for or keep alive.</td></tr><tr><td>Scorers</td><td>Plain Python + httpx</td><td>Deterministic data fetching needs no model. A monthly job pre-computes all 200 scores into a table, so the first pass is a lookup.</td></tr><tr><td>Data</td><td>data.police.uk, OpenStreetMap (Overpass), TfL, ONS private rents, postcodes.io</td><td>Free, public and authoritative. They're also slow and rate-limited, which is exactly why they're cached rather than called live.</td></tr><tr><td>Backend</td><td>FastAPI in Docker on Railway</td><td>Async Python suits parallel agents, and FastAPI streams a typed event for each stage over server-sent events. A long-running container avoids the timeouts serverless functions hit on a search that can run past a minute.</td></tr><tr><td>Frontend</td><td>Next.js (App Router) + Tailwind on Vercel</td><td>The UI reads the event stream with plain fetch and draws each stage as it happens. There's no chat SDK, because there's no chat.</td></tr><tr><td>Database</td><td>Supabase (Postgres)</td><td>One store for cached scores, searches, raw learnings, the distilled brain and its history. Stateless servers can't keep files between requests, so memory has to live in a database, and Postgres handles concurrent writes safely. Supabase Auth is ready for accounts in v2.</td></tr><tr><td>Infrastructure</td><td>GitHub, Supabase and Vercel CLIs, migrations</td><td>Every change goes through a CLI or a migration file, not a dashboard, so the whole setup is reproducible.</td></tr></tbody></table></div><div>Nothing here is exotic, and that's deliberate. The interesting decisions are in how the work is divided, not in the tools.</div></div>
+</div>
+
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
+padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="title">7. Key decisions and trade-offs<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -398,7 +418,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">6. Evals: proving it decides <em>well</em>, not just that it runs<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">8. Evals: proving it decides <em>well</em>, not just that it runs<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -408,7 +428,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">7. Continuous learning<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">9. Continuous learning<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -440,7 +460,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">8. What broke, and what I learned<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">10. What broke, and what I learned<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -450,7 +470,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">9. Beyond postcodes<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">11. Beyond postcodes<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
@@ -460,7 +480,7 @@ padding-bottom: px;
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="padding-top: 60px;
 padding-bottom: px;
 ">
-  <div class="rich-text js-text-editable module-text"><div class="title">10. By the numbers<br></div></div>
+  <div class="rich-text js-text-editable module-text"><div class="title">12. By the numbers<br></div></div>
 </div>
 
               <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
